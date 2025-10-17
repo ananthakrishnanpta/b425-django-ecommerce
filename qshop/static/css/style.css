@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header#site-header {
+    height: 45px;
+}
+
+main {
+    /* background-color: blue; */
+    margin-top: 58px;
+
+    #home-carousel {
+        .custom-carousel img {
+            /* height: 200px; */
+            aspect-ratio: 16/4;
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+}
