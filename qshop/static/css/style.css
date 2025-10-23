@@ -11,8 +11,19 @@ header#site-header {
 main {
     /* background-color: blue; */
     margin-top: 58px;
+    margin-bottom: 30px;
 
     #home-carousel {
+        .custom-carousel img {
+            /* height: 200px; */
+            aspect-ratio: 16/4;
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+
+    #carousel-preview {
+
         .custom-carousel img {
             /* height: 200px; */
             aspect-ratio: 16/4;
