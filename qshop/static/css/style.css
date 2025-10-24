@@ -31,4 +31,16 @@ main {
             object-position: top;
         }
     }
+
+    .carousel-cards-container { 
+        div.card {
+            height: 160px;
+            img {
+                aspect-ratio: 16/4;
+                width: 100%;
+                object-fit: cover;
+                object-position: top;
+            }
+        }
+    }
 }

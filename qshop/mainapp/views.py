@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 
 from .models import CarouselImage
 
@@ -37,9 +38,22 @@ def homeView(request):
 
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 
+# Creating records - 
+class AddCarouselImage(CreateView):
+    model = CarouselImage # This provides table name for inserting records
+    fields = '__all__' # Fields to insert values into
+    # Defining where the site should redirect to, after successful insertion of record.
+    success_url = reverse_lazy('carousels_page')
+
+    template_name = 'mainapp/add_carousel.html'
+
+
+
+
+# Reading
 class ViewCarouselImages(ListView):
     model = CarouselImage
-    context_object_name = 'carousel_images'
+    context_object_name = 'carousel_images' # If not used, obj name will be <model_name>_list
     template_name = 'mainapp/carousel_list.html'
 
 def aboutView(request):

@@ -14,14 +14,14 @@ Carousel Management
     </div>
     <div class="col-12 col-lg-6">
         <div class="card h-100 d-flex justify-content-center align-items-center">
-            <a href="" class="btn btn-success">Add Carousel Image</a>
+            <a href="{% url 'add_carousel' %}" class="btn btn-success">Add Carousel Image</a>
         </div>
     </div>
 </div>
 </section>
 <hr class="border border-warning border-1 opacity-50">
 
-<section class=" container-fluid row text-center mx-auto">
+<section class="carousel-cards-container container-fluid row text-center mx-auto">
     {% for carousel in carousel_images %}
         {% include 'mainapp/includes/carousel_card.html' %}
     {% endfor %}
