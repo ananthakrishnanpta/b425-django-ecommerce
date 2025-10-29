@@ -37,7 +37,7 @@ def homeView(request):
 # ------------------
 
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
-
+# -------------------------Carousel CRUD-----------------------
 # Creating records - 
 class AddCarouselImage(CreateView):
     model = CarouselImage # This provides table name for inserting records
@@ -47,14 +47,26 @@ class AddCarouselImage(CreateView):
 
     template_name = 'mainapp/add_carousel.html'
 
-
-
-
 # Reading
 class ViewCarouselImages(ListView):
     model = CarouselImage
     context_object_name = 'carousel_images' # If not used, obj name will be <model_name>_list
     template_name = 'mainapp/carousel_list.html'
+
+# Updating
+class EditCarousel(UpdateView):
+    model = CarouselImage
+    template_name = 'mainapp/edit_carousel.html'
+    fields = '__all__'
+    success_url = reverse_lazy('carousels_page')
+
+# Delete
+class RemoveCarousel(DeleteView):
+    model = CarouselImage
+    template_name = 'mainapp/del_carousel.html'
+    success_url = reverse_lazy('carousels_page')
+
+# -----------------------------------------------------------------
 
 def aboutView(request):
     template_name = 'mainapp/about.html'

@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+{{product.title.capitalize}}
+{% endblock %}
+
+{% block content %}
+<div class="row ">
+
+    <div class="col-12 col-md-6">
+        <img src="{{product.thumbnail.url}}" class="w-100">
+    </div>
+    <div class="col-6">
+        <div class="">
+
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}

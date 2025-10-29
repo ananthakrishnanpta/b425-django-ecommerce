@@ -40,7 +40,8 @@ INSTALLED_APPS = [
 
     'mathfilters',
     # Project Apps
-    'mainapp'
+    'mainapp',
+    'products'
 ]
 
 MIDDLEWARE = [
