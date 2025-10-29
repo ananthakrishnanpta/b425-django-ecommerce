@@ -23,3 +23,16 @@ class ProductDetail(DetailView):
     context_object_name = 'product'
     template_name = 'products/product_details.html'
     
+
+class EditProduct(UpdateView):
+    model = Product
+    fields = '__all__'
+    template_name = 'products/edit_product.html'
+    success_url = reverse_lazy('view_products')
+
+class RemoveProduct(DeleteView):
+    model = Product
+    template_name = 'products/del_product.html'
+    success_url = reverse_lazy('view_products')
+
+

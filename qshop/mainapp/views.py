@@ -44,7 +44,6 @@ class AddCarouselImage(CreateView):
     fields = '__all__' # Fields to insert values into
     # Defining where the site should redirect to, after successful insertion of record.
     success_url = reverse_lazy('carousels_page')
-
     template_name = 'mainapp/add_carousel.html'
 
 # Reading
