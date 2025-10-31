@@ -8,7 +8,7 @@ def homeView(request):
     template_name = 'mainapp/home.html'
     context = {
         # dictionary with context data.
-        'carousel_images' : CarouselImage.objects.all()
+        'carousel_images' : CarouselImage.objects.all(),
         # The above line is equivalent to `SELECT * FROM CarouselImage;`
 
     }

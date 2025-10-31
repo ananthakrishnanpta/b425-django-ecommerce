@@ -55,6 +55,39 @@ main {
 
         }
     }
+
+    .product-img-carousel {
+        .carousel img { 
+            height: 300px;
+            object-fit: contain;
+        }
+        .carousel-indicators button.thumbnail {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            img {
+                aspect-ratio: 1/1;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .carousel-indicators button.thumbnail:not(.active) {
+            opacity: 0.7;
+        }
+
+        .carousel-indicators {
+            position: static;
+        }
+
+        @media screen and (min-width: 992px) {
+            .carousel {
+                max-width: 70%;
+                margin: 0 auto;
+            }
+        }
+
+    }
 }
 
 
