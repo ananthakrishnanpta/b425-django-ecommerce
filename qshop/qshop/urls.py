@@ -26,6 +26,10 @@ urlpatterns = [
 
     path('', include('mainapp.urls')),
     path('products/', include('products.urls')),
+
+    # auth
+    path('accounts/', include('accounts.urls')),
+    path('accounts/', include('django.contrib.auth.urls'))
 ]
 
 # Appending urls to media folder during development
