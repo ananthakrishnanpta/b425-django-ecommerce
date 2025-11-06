@@ -42,7 +42,10 @@ INSTALLED_APPS = [
     # Project Apps
     'mainapp',
     'products',
-    'accounts'
+    'accounts',
+    'cart',
+    'orders',
+    'payments'
 ]
 
 MIDDLEWARE = [

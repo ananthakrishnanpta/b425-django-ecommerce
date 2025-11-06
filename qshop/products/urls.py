@@ -5,6 +5,8 @@ from .views import (ViewProducts, AddProduct,
                     RemoveProduct)
 from .views import EditProductImage, DelProductImage
 
+from .views import searchView
+
 urlpatterns = [
     path('', ViewProducts.as_view(), name='view_products'),
     path('add/', AddProduct.as_view(), name = 'add_product'),
@@ -15,5 +17,7 @@ urlpatterns = [
 
     path('image/edit/<int:pk>/', EditProductImage.as_view(), name='edit_prod_image' ),
     path('image/del/<int:pk>/', DelProductImage.as_view(), name='del_prod_image' ),
+
+    path('search/', searchView, name = 'search_products')
     
 ]

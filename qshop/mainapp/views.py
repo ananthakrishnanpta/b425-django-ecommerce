@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 
 from .models import CarouselImage
+from products.models import Product
 
 # Create your views here.
 def homeView(request):
@@ -9,6 +10,8 @@ def homeView(request):
     context = {
         # dictionary with context data.
         'carousel_images' : CarouselImage.objects.all(),
+        'products' : Product.objects.all(),
+        'search_bar' : True
         # The above line is equivalent to `SELECT * FROM CarouselImage;`
 
     }

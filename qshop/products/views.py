@@ -22,6 +22,11 @@ class ViewProducts(ListView):
     context_object_name = 'products'
     template_name = 'products/products.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['search_bar'] = True
+        return context
+
 class ProductDetail(DetailView):
     model = Product
     context_object_name = 'product'
@@ -101,5 +106,17 @@ class DelProductImage(DeleteView):
         product_pk = self.object.product.pk
         return reverse_lazy('prod_detail', kwargs={'pk': product_pk})
     
+
+def searchView(request):
+    query = request.GET.get('q')
+    result_products = Product.objects.filter(title__icontains = query)
+    context = {
+        'query' : query,
+        'products' : result_products,
+        'search_bar' : True
+    }
+    template = 'products/search_results.html'
+
+    return render(request, template, context)
 
 
